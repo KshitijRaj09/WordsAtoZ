@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/WordsAtoZ/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/WordsAtoZ/static/js/main.893c3547.chunk.js",
+    "main.js.map": "/WordsAtoZ/static/js/main.893c3547.chunk.js.map",
+    "runtime-main.js": "/WordsAtoZ/static/js/runtime-main.35ffe149.js",
+    "runtime-main.js.map": "/WordsAtoZ/static/js/runtime-main.35ffe149.js.map",
+    "static/js/2.24919bfe.chunk.js": "/WordsAtoZ/static/js/2.24919bfe.chunk.js",
+    "static/js/2.24919bfe.chunk.js.map": "/WordsAtoZ/static/js/2.24919bfe.chunk.js.map",
+    "index.html": "/WordsAtoZ/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/WordsAtoZ/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.24919bfe.chunk.js.LICENSE.txt": "/WordsAtoZ/static/js/2.24919bfe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35ffe149.js",
+    "static/js/2.24919bfe.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.893c3547.chunk.js"
+  ]
+}
