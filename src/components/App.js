@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { CssBaseline } from "@material-ui/core";
 import NavBar from "../components/NavBar";
 import Loading from "./loading/Loading";
 import DictionaryContainer from "./dictionaryMain/DictionaryContainer";
@@ -42,11 +43,9 @@ const App = () => {
       return loading ? <Loading /> : <ErrorPage errorMessage={errorMessage} />;
   };
   return (
-    <div className="ui container">
-      <div>Welcome {appTitle}</div>
-      <div>
-        <NavBar searchMeaning={searchMeaning} />
-      </div>
+    <div>
+      <NavBar searchMeaning={searchMeaning} />
+
       <div>{renderComponent()}</div>
     </div>
   );

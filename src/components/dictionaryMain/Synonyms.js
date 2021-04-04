@@ -1,23 +1,17 @@
-import React from 'react'
+import React from "react";
 
-export default function Synonyms({synonyms}) {
-   const synonymsList = synonyms.map(data => {
-        return(
-            <ul>
-                <li key={data}>
-                    {data}
-                </li>
-            </ul>
-        );
-    });
-    
-    return (
-        <div>
-            {synonymsList}
-        </div>
-    );
-};
+export default function Synonyms({ synonyms }) {
+  const synonymsList = synonyms.map((data, index) => {
+    return <li key={index}>{data}</li>;
+  });
 
-Synonyms.defaultProps={
-    synonyms:[]
+  return (
+    <div>
+      <ul>Similar: {synonymsList}</ul>
+    </div>
+  );
+}
+
+Synonyms.defaultProps = {
+  synonyms: []
 };
