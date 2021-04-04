@@ -6,14 +6,66 @@ import {
   InputBase,
   InputLabel,
   Select,
-  Grid
+  Grid,
 } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flex: 1,
+  },
+  appBarStyle: {
+    backgroundColor: "#b67162",
+    padding: "10px 0",
+    marginBottom: "5px",
+  },
+  appBarMainGrid: {
+    justifyContent: "center",
+    alignContent: "center",
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "space-between",
+    },
+  },
+  search: {
+    position: "relative",
+    borderRadius: "20px",
+    backgroundColor: fade(theme.palette.common.white, 0.35),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginTop: "5px",
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "50%",
+    },
+  },
+  inputInput: {
+    width: "70%",
+    paddingLeft: "7px",
+    color: "#fff",
+    "&:hover": {
+      width: "100%",
+      color: "#464f41",
+      backgroundColor: "#f7f3e9",
+      borderRadius: "20px",
+    },
+  },
+  SearchIcon: {
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
+  selectField: {
+    borderRadius: "5px",
+    border: "solid 1px #f7f3e9",
+    paddingLeft: "5px",
+    color: "#53354a",
+    width: "100%",
+  },
+}));
 
 const NavBar = (props) => {
   const classes = useStyles();
@@ -38,16 +90,16 @@ const NavBar = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className={classes.grow}>
-        <Grid container>
-          <AppBar position="static">
-            <Toolbar>
-              <Grid item xs={12}>
+      <div className={classes.root}>
+        <AppBar position="static" className={classes.appBarStyle}>
+          <Toolbar>
+            <Grid container className={classes.appBarMainGrid}>
+              <Grid item xs={12} md={6}>
                 <Typography variant="h4" className={classes.title} noWrap>
                   WordsAtoZ
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} md={6}>
                 <InputLabel htmlFor="age-native-simple">Language</InputLabel>
                 <Select
                   native
@@ -55,8 +107,9 @@ const NavBar = (props) => {
                   onChange={dropDownHandler}
                   inputProps={{
                     name: "language",
-                    id: "language-native-simple"
+                    id: "language-native-simple",
                   }}
+                  className={classes.selectField}
                 >
                   <option value="en">English</option>
                   <option value="hi">Hindi</option>
@@ -79,14 +132,19 @@ const NavBar = (props) => {
                     value={word}
                     onInput={inputChange}
                     className={classes.inputInput}
-                    startAdornment={<SearchIcon onClick={submitHandler} />}
+                    startAdornment={
+                      <SearchIcon
+                        onClick={submitHandler}
+                        className={classes.SearchIcon}
+                      />
+                    }
                     inputProps={{ "aria-label": "search" }}
                   />
                 </div>
               </Grid>
-            </Toolbar>
-          </AppBar>
-        </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
       </div>
     </form>
   );

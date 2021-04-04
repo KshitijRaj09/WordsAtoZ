@@ -6,10 +6,10 @@ const DictionaryContainer = ({ dictionaryData }) => {
   return (
     <>
       {
-        <div>
+        <>
           <Phonetics phonetics={dictionaryData.phonetics} />
           <Meaning meaning={dictionaryData.meanings} />
-        </div>
+        </>
       }
     </>
   );
