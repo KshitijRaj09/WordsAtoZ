@@ -11,7 +11,7 @@ export default class App extends React.Component{
         loading : false
     }
 
-    searchWord= async (input,language)=>{
+    searchWord = async (input,language)=>{
         this.setState({loading:true});
         try{
             const response= await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${language}/${input}`);
@@ -26,9 +26,13 @@ export default class App extends React.Component{
 
     render(){
         return (
-        <div className="ui container">
-            <div>Welcome {this.title}</div>
-            <div><Search searchWord={this.searchWord}/></div>
+        <div className="">
+            <div className='app-container'>
+            <div className='title-div'>Welcome to {this.title}</div>
+            <div></div>
+            <div className='search-div'><Search searchWord={this.searchWord}/></div>
+            </div>
+           
             <div>
                 {this.state.loading?<Loading/> : <DictionaryContainer dictionaryData={this.state.data}/>}
             </div>
